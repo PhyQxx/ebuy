@@ -41,9 +41,9 @@ spring:
 
 ############################## mybatis-plus配置 开始  ##############################
 mybatis-plus:
-  mapper-locations: classpath*:com/**/mapping/*.xml
-  typeAliasesPackage: com.jxdinfo.hussar.**.model,com.xxxx.**.model
-  typeEnumsPackage: com.jxdinfo.hussar.common.constant.enums
+  mapper-locations: classpath*:com/phy/ebuy/dao/mapping/*.xml
+  typeAliasesPackage: com.phy.ebuy.model
+
   global-config:
     id-type: 3                                              # 0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
     db-column-underline: false

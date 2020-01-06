@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <title>登录页面</title>
     <link rel="stylesheet" href="../../static/css/login.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/img/favicon.ico" rel="external nofollow" />
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <script src="../../static/layui/layui.all.js"></script>
+
 </head>
 <body>
     <div class="head">
-        <div class="log">
-
+        <div class="log"></div>
+        <div class="login-msg error">
+            <p class="error">
+                为确保您账户的安全及正常使用，依《网络安全法》相关要求，6月1日起会员账户需绑定手机。如您还未绑定，请尽快完成，感谢您的理解及支持！
+            </p>
         </div>
     </div>
     <div class="middle">
@@ -16,23 +23,30 @@
             <div class="login-title">
                 账户登录
             </div>
-            <form action="" method="post">
+            <div class="form">
                 <div class="userName">
-                    <img class="ico1">
-                    <input class="input1" type="text" placeholder="用户名">
+                    <div class="ico1"></div>
+                    <input id="userName" class="input1" type="text" name="userName" placeholder="用户名/手机号">
                 </div>
                 <div class="passWord">
-                    <img class="ico2">
-                    <input class="input1" type="password" placeholder="密码">
+                    <div class="ico2"></div>
+                    <input id="passWord" class="input1" type="password" name="passWord" placeholder="密码">
                 </div>
                 <button class="login-btu" type="submit">
                     登 录
                 </button>
-            </form>
+            </div>
+            <div class="function">
+                <div class="forget-password">忘记密码</div>
+                <div class="register">免费注册</div>
+            </div>
         </div>
     </div>
     <div class="bottom">
 
     </div>
 </body>
+<script src="../../static/js/jquery-1.12.2.js"></script>
+<script src="../../static/js/login.js"></script>
+<script src="../../static/layui/layui.js"></script>
 </html>

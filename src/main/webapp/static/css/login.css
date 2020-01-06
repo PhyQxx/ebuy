@@ -14,6 +14,36 @@ body{
 }
 .head{
     flex: 1;
+    display: flex;
+}
+.head .log{
+    background: url("../img/E-Buy2.png");
+    background-repeat: no-repeat;
+    background-size: 80% 50%;
+    -moz-background-size: 80% 80%;
+    background-position: center;
+    height: 100%;
+    width: 10%;
+    margin-left: 8%;
+}
+.head .login-msg{
+    text-align: center;
+    width: 880px;
+    background-color: #fef2f2;
+    color: #6C6C6C;
+    line-height: 16px;
+    padding: 6px 10px;
+    overflow: hidden;
+    background: #fef2f2;
+    border: 1px solid #ffb4a8;
+    font-size: 0.8em;
+    height: 1em;
+    margin: auto;
+    margin-left: 40px;
+}
+.head .login-msg error .error{
+    float: none;
+    width: auto;
 }
 .middle{
     flex: 8;
@@ -27,7 +57,7 @@ body{
     margin-left: 65%;
     width: 20%;
     height: 42%;
-    background: #E9E9F2;
+    background: #FFF3E6;
     padding: 1em;
 }
 .middle .login-box .login-title{
@@ -39,52 +69,80 @@ body{
     padding-bottom: 8px;
     font-weight: 700;
 }
-.middle .login-box form .userName{
+.middle .login-box .form .userName{
     height: 2.5em;
     width: 90%;
     background: white;
     margin: 0 auto;
     margin-top: 1em;
 }
-.middle .login-box form .userName .ico1{
+.middle .login-box .form .userName .ico1{
+    background-color: #ddd;
     width: 40px;
     float: left;
     height: 100%;
-    background-size: 100% 100%;
-    background: url("../img/person.png");
+    background-image:url("../img/person.png");
+    background-repeat:no-repeat;
+    background-size:80% 80%;
+    -moz-background-size:80% 80%;
+    background-position: center;
 }
-.middle .login-box form .passWord .ico2{
+.middle .login-box .form .passWord .ico2{
+    background-color: #ddd;
     width: 40px;
     float: left;
     height: 100%;
-    background-size: 100% 100%;
-    background: url("../img/password.png");
+    background-image:url("../img/password.png");
+    background-repeat:no-repeat;
+    background-size:80% 80%;
+    -moz-background-size:80% 80%;
+    background-position: center;
 }
-.middle .login-box form .input1{
-    padding: 10px 10px 10px 10px;
+.middle .login-box .form .input1{
+    padding: 9px 10px 9px 10px;
     height: 50%;
-    width: calc(100% - 60px);
+    width: calc(100% - 62px);
     background: white;
-    border: none;
+    border: 1px solid #ddd;
 }
-.middle .login-box form .passWord{
+.middle .login-box .form .passWord{
     height: 2.5em;
     width: 90%;
     background: white;
     margin: 0 auto;
     margin-top: 1em;
 }
-.middle .login-box form .login-btu{
-    display: block;
+.middle .login-box .form .login-btu{
     height: 3em;
     width: 90%;
-    background: #FBBE6E;
     margin: 0 auto;
     margin-top: 1em;
-    font-weight:bold;
-    color: #5E5E5E;
-    border-radius: 10%;
     letter-spacing: 15px;
+    border: 0;
+    display: block;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 42px;
+    font-weight: 700;
+    color: #fff;
+    background: #f40;
+    border-radius: 3px;
+    cursor: pointer;
+    zoom: 1;
+}
+.middle .login-box .function{
+    color: #6C6C6C;
+    margin-top: 1em;
+    display: flex;
+    font-size: 0.8em;
+    width: 60%;
+    float: right;
+}
+.middle .login-box .function .forget-password{
+    flex: 1;
+}
+.middle .login-box .function .register{
+    flex: 1;
 }
 .bottom{
     flex: 1;
