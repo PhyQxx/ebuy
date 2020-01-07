@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.phy.ebuy.dao.EbuyMapper">
+
+    <!--验证登录-->
+    <select id="verifyLogin" parameterType="map" resultType="map" >
+        select * from ebuy_user where (user_name = #{userName}  and pass_word = #{passWord})
+        or (mobile = #{userName} and pass_word = #{passWord})
+    </select>
+
+    <!--注册提交-->
+    <insert id="registerSub" parameterType="map">
+        INSERT INTO ebuy_user
+        VALUES
+            (
+            ( SELECT RIGHT ( RAND( ), 16 ) ),
+            #{userName},
+            #{passWord},
+            '',
+            '',
+            '',
+            #{mobile},
+            '',
+            '00',
+            now( ),
+            '',
+            '00',
+            '0',
+            ( SELECT RIGHT ( RAND( ), 16 ) )
+            );
+    </insert>
+</mapper>

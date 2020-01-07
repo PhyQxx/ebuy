@@ -31,12 +31,41 @@ public class EbuyController {
         parameter.put("userName",userName);
         parameter.put("passWord",passWord);
         //返回结果
-        Map<String,Object> result = null;
+        Map<String,Object> result = new HashMap<>();
         try {
             result = ebuyService.verifyLogin(parameter);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
+    }
+
+    //跳转到注册页面
+    @RequestMapping("/register")
+    public String register() {
+        return "register.html";
+    }
+
+    //注册提交
+    @RequestMapping("/registerSub")
+    @ResponseBody
+    public Map<String,Object> registerSub(@RequestParam("mobile") String mobile,
+                                          @RequestParam("userName") String userName,
+                                          @RequestParam("passWord") String passWord) {
+        //返回结果
+        Map<String,Object> result = new HashMap<>();
+        //参数
+        Map<String,Object> parameter = new HashMap<>();
+        parameter.put("mobile",mobile);
+        parameter.put("userName",userName);
+        parameter.put("passWord",passWord);
+        result = ebuyService.registerSub(parameter);
+        return result;
+    }
+
+    //跳转到主页面
+    @RequestMapping("/index")
+    public String index() {
+        return "index.html";
     }
 }

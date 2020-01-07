@@ -40,38 +40,38 @@ spring:
 ############################## spring配置 结束  ##############################
 
 ############################## mybatis-plus配置 开始  ##############################
-mybatis-plus:
+mybatis:
   mapper-locations: classpath*:com/phy/ebuy/dao/mapping/*.xml
   typeAliasesPackage: com.phy.ebuy.model
 
-  global-config:
-    id-type: 3                                              # 0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
-    db-column-underline: false
-    refresh-mapper: true
-    logic-delete-value: 0
-    logic-not-delete-value: 1
-    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
-  configuration:
-    map-underscore-to-camel-case: false
-    cache-enabled: true                                     # 配置的缓存的全局开关
-    lazyLoadingEnabled: true                                # 延时加载的开关
-    multipleResultSetsEnabled: true                 # 开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
-    #jdbc-type-for-null: 'null'                             #Oracle数据库开启，否则使用updateAllColumnById()这种方法，如果列值为空，就会报错
-    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 打印sql语句,调试用
+#  global-config:
+#    id-type: 3                                              # 0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+#    db-column-underline: false
+#    refresh-mapper: true
+#    logic-delete-value: 0
+#    logic-not-delete-value: 1
+#    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+#  configuration:
+#    map-underscore-to-camel-case: false
+#    cache-enabled: true                                     # 配置的缓存的全局开关
+#    lazyLoadingEnabled: true                                # 延时加载的开关
+#    multipleResultSetsEnabled: true                 # 开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+#    jdbc-type-for-null: 'null'                             #Oracle数据库开启，否则使用updateAllColumnById()这种方法，如果列值为空，就会报错
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 打印sql语句,调试用
 ############################## mybatis-plus配置 结束  ##############################
 
 ############################## quartz配置 结束  ##############################
-org:
-  quartz:
-    jobStore:
-      class: org.quartz.impl.jdbcjobstore.JobStoreTX              # 持久化
-      dataSource: hussar                                          # 定时任务数据源别名，非数据库别名
-      misfireThreshold: 5000                                      # 容许的最大作业延长时
-      tablePrefix: SYS_QRTZ_                                      # 表的前缀
-    threadPool:
-      threadCount: 5                                              # 并发个数
-      threadPriority: 5                                           # 优先级
-      threadsInheritContextClassLoaderOfInitializingThread: true  # 自创建父线程
+#org:
+#  quartz:
+#    jobStore:
+#      class: org.quartz.impl.jdbcjobstore.JobStoreTX              # 持久化
+#      dataSource: hussar                                          # 定时任务数据源别名，非数据库别名
+#      misfireThreshold: 5000                                      # 容许的最大作业延长时
+#      tablePrefix: SYS_QRTZ_                                      # 表的前缀
+#    threadPool:
+#      threadCount: 5                                              # 并发个数
+#      threadPriority: 5                                           # 优先级
+#      threadsInheritContextClassLoaderOfInitializingThread: true  # 自创建父线程
 ############################## quartz配置 结束  ##############################
 
 ############################## 日志配置 开始  ##############################
@@ -82,24 +82,24 @@ org:
 ############################## 日志配置 结束  ##############################
 
 ############################## hussar配置 开始  ##############################
-hussar:
-  spring-session-open: false                # 是否开启spring session,如果是多机环境需要开启(true/false)
-  stand-alone: true                         # true 为单机环境  false 是集群环境
-  welcome-page: /                           # 配置项目访问路径
-  login-upper-open: true                    # 是否区分登录账号大小写 (true/false)
-  download-path: g:/GXDownload
+#hussar:
+#  spring-session-open: false                # 是否开启spring session,如果是多机环境需要开启(true/false)
+#  stand-alone: true                         # true 为单机环境  false 是集群环境
+#  welcome-page: /                           # 配置项目访问路径
+#  login-upper-open: true                    # 是否区分登录账号大小写 (true/false)
+#  download-path: g:/GXDownload
 ############## 登录密码传输加密的加密方式 默认提供三种加密方式  非对称RSA、对称AES 、Base64；存储加密方式默认提供SM4（国密4算法）、MD5哈希算法，可自行扩展其他算法
-  encrypt-type:
-    type: RSA                       # 登录传输加密的加密方式 不区分大小写
-    db-encrypt-type: SM4            # 存储加密的加密方式 不区分大小写 默认提供国密4算法；！！！！！！！！ 修改该配置，需要重置数据库中密码所有密码！！！！！
-    secret-free-ip: 192.168.1.1     # 这里配置一个有登录权限的IP
+#  encrypt-type:
+#    type: RSA                       # 登录传输加密的加密方式 不区分大小写
+#    db-encrypt-type: SM4            # 存储加密的加密方式 不区分大小写 默认提供国密4算法；！！！！！！！！ 修改该配置，需要重置数据库中密码所有密码！！！！！
+#    secret-free-ip: 192.168.1.1     # 这里配置一个有登录权限的IP
 
 ############################## 外部接口配置  ##############################
-  open-orgservice: false       #是否启用组织机构外部接口
+#  open-orgservice: false       #是否启用组织机构外部接口
 
 ############## JWT认证所需参数
-  jwt:
-    auth-path: /auth                # 认证请求的路径
+#  jwt:
+#    auth-path: /auth                # 认证请求的路径
     ############################## 以下配置为系统默认配置  ##############################
 #    header: Authorization           # http请求头所需要的字段
 #    secret: mySecret                # jwt秘钥
@@ -121,8 +121,8 @@ hussar:
 #  - /notice/update
 #  - /notice/add
 #  login-html: /login.html                  # 登录页html
-  index-config: true                        #是否开启欢迎页配置 true开启 false不开启
-  default-index: /gxswJcsjInfo/view   #默认欢迎页访问路径
+#  index-config: true                        #是否开启欢迎页配置 true开启 false不开启
+#  default-index: /gxswJcsjInfo/view   #默认欢迎页访问路径
 #  shiro:                                    # shiro 通用配置
 #    login-url: /login                       # 登录页面URL
 #    unauthorized-url: /global/403           # 授权失败跳转地址

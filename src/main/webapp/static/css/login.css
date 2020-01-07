@@ -125,7 +125,7 @@ body{
     line-height: 42px;
     font-weight: 700;
     color: #fff;
-    background: #f40;
+    background: rgb(80,206,194);
     border-radius: 3px;
     cursor: pointer;
     zoom: 1;
@@ -139,9 +139,11 @@ body{
     float: right;
 }
 .middle .login-box .function .forget-password{
+    cursor:pointer;
     flex: 1;
 }
 .middle .login-box .function .register{
+    cursor:pointer;
     flex: 1;
 }
 .bottom{
