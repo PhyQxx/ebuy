@@ -16,16 +16,327 @@ body{
     background: rgb(245,245,245);
     flex: 1;
     width: 100%;
+
 }
 .head .content{
+
     width: 80%;
     height: 100%;
     margin: 0 auto;
 }
+.head .content .not-login-information{
+
+    line-height: 3em;
+}
+.head .content .not-login-information .login-text{
+    float: left;
+}
+.head .content .not-login-information .login-text a{
+    color: rgb(23,181,254);
+    cursor: pointer;
+}
+.head .content .not-login-information .register-text{
+    margin-left: 2em;
+    float: left;
+    cursor: pointer;
+}
+.head .content .not-login-information .register-text :hover{
+    color: rgb(23,181,254);
+}
+.head .content .login-information{
+    display: none;
+    line-height: 3em;
+}
+.head .content .login-information :hover{
+    background: white;
+
+}
+.head .content .login-information .login-text :hover{
+    color: rgb(23,181,254);
+}
+.head .content .login-information .login-text{
+    float: left;
+}
+.head .content .login-information .login-text .login-text-username{
+    cursor: pointer;
+}
+.head .content .login-information .login-text #icon1{
+    cursor: pointer;
+    color: rgb(23,181,254);
+}
+.head .content .login-information .login-text .personInfo{
+    display: none;
+    background: #fff;
+    width: 240px;
+    height: 160px;
+    position: absolute;
+    padding: 1em;
+    top: 3em;
+    left: 10%;
+    border: 1px solid rgb(238,238,238);
+}
+.head .content .login-information .login-text .personInfo .function{
+    color: black;
+}
+.head .content .login-information .login-text .personInfo .function :hover{
+    color: rgb(23,181,254);
+}
+.head .content .login-information .login-text .personInfo .function .account-management{
+    margin-right: 2em;
+    cursor: pointer;
+}
+.head .content .login-information .login-text .personInfo .function .sign-out{
+    cursor: pointer;
+}
+.head .content .login-information .login-text .personInfo .info{
+    margin-top: -0.6em;
+}
+.head .content .login-information .login-text .personInfo .info :hover{
+    color: black;
+}
+.head .content .login-information .login-text .personInfo .info .head-portrait{
+    height: 3em;
+    width: 3em;
+    background: url("../img/E.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 80% 80%;
+    background-position: center;
+    margin-top: 5em;
+    margin-left: 2em;
+    cursor: pointer;
+}
+.head .content .login-information .login-text .personInfo .info .grade{
+    color: black;
+    float: right;
+    margin-top: -3.4em;
+    margin-right: 3em;
+}
+.head .content .login-information .login-text .personInfo .info .grade .ebuy-grade{
+    height: 2em;
+    line-height: 2em;
+}
+.head .content .login-information .login-text .personInfo .info .grade .membership-level{
+    height: 2em;
+    line-height: 2em;
+}
+.head .content .login-information .login-text .personInfo .info .more-equity{
+    text-align: center;
+    border: 1px solid rgb(129,190,255);
+    background: rgb(220,238,252);
+    padding: 4px 0;
+    height: 1em;
+    line-height: 1em;
+    margin-top: 1.6em;
+    color: black;
+    cursor: pointer;
+}
+.head .content .login-information .news{
+    float: left;
+}
+.head .content .login-information .news span{
+    cursor: pointer;
+}
+.head .content .login-information .news #icon2{
+    color: rgb(23,181,254);
+}
+.head .content .login-information .news :hover{
+    color: rgb(23,181,254);
+}
+.head .content .login-information .news .news-number{
+    color: rgb(23,181,254);
+}
+.head .content .login-information .news .news-photo{
+    background: url("../img/news.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 80% 80%;
+    background-position: center;
+    width: 1.5em;
+    height: 1.5em;
+    float: left;
+    margin-top: 0.76em;
+    margin-left: 2em;
+}
+.head .content .login-information .news .news-content{
+    display: none;
+    background: #fff;
+    width: 240px;
+    height: 160px;
+    position: absolute;
+    padding: 1em;
+    top: 3em;
+    margin-left: -110px;
+    border: 1px solid rgb(238,238,238);
+    overflow: auto;
+    color: black;
+}
+.head .content .login-information .news .news-content :hover{
+    color: rgb(23,181,254);
+}
+.head .content .login-information .news .news-content .one-news{
+    cursor: pointer;
+}
+.head .content .function{
+    display: flex;
+    float: right;
+    line-height: 3em;
+
+}
+.head .content .function :hover{
+    color: rgb(23,181,254);
+    background: white;
+}
+.head .content .function .cart{
+    margin-right: 2em;
+    cursor: pointer;
+}
+.head .content .function .cart .cart-photo{
+    float: left;
+    height: 2em;
+    width: 2em;
+    background: url("../img/cart.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 80% 80%;
+    background-position: center;
+    margin-top: 0.32em;
+}
+.head .content .function .cart .cart-number{
+    color: rgb(23,181,254);
+}
+.head .content .function .cart .cart-content{
+    display: none;
+    background: #fff;
+    width: 240px;
+    height: 340px;
+    position: absolute;
+    padding: 1em;
+    top: 3em;
+    cursor: auto;
+    border: 1px solid rgb(238,238,238);
+    color: black;
+    font-weight: bold;
+    overflow: auto;
+    margin-left: -102px;
+}
+.head .content .function .cart .cart-content span{
+    color: black;
+}
+.head .content .function .cart .cart-content .commodity .one-commodity{
+    height: 3em;
+    font-weight: normal;
+    display: flex;
+    color: black;
+    margin-top: 1em
+}
+.head .content .function .cart .cart-content .commodity .one-commodity .commodity-photo{
+    flex:1;
+    background:url("../img/chufang01.jpg") no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    height: 100%;
+    width: 3em;
+    cursor: pointer;
+}
+.head .content .function .cart .cart-content .commodity .one-commodity .commodity-name{
+    flex: 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: -0.8em;
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+.head .content .function .cart .cart-content .commodity .one-commodity .price-delete{
+    flex:1;
+}
+.head .content .function .cart .cart-content .commodity .one-commodity .price-delete .commodity-price{
+    color: rgb(23,181,254);
+    font-weight: bold;
+    height: 1em;
+    margin-top: -0.8em;
+}
+.head .content .function .cart .cart-content .commodity .one-commodity .price-delete .commodity-delete{
+    margin-top: 0.5em;
+    float: right;
+    cursor: pointer;
+}
+.head .content .function .cart .cart-content .cart-bottom-text{
+    float: right;
+}
+.head .content .function .cart .cart-content .cart-but{
+    color: white;
+    background: rgb(80,206,194);
+    border: 0;
+    display: block;
+    overflow: hidden;
+    vertical-align: middle;
+    font-weight: normal;
+    border-radius: 2px;
+    cursor: pointer;
+    zoom: 1;
+    height: 1.8em;
+    line-height: 1.8em;
+    float: right;
+}
+.head .content .function .collection{
+    margin-right: 2em;
+    cursor: pointer;
+}
+.head .content .function .set-up-shop{
+    margin-right: 2em;
+    cursor: pointer;
+}
+.head .content .function .business{
+    display: none;
+    margin-right: 2em;
+    cursor: pointer;
+}
+.head .content .function .shop-photo{
+    float: left;
+    height: 2em;
+    width: 2em;
+    background: url("../img/shop.png");
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    -moz-background-size:  50% 50%;
+    background-position: center;
+    margin-top: 0.4em;
+    color: rgb(23,181,254);
+}
+.head .content .function .service{
+    margin-right: 2em;
+    cursor: pointer;
+}
+.head .content .function .service .service-photo{
+    float: left;
+    height: 2em;
+    width: 2em;
+    background: url("../img/service.png");
+    background-repeat: no-repeat;
+    background-size:  60% 60%;
+    -moz-background-size:  60% 60%;
+    background-position: center;
+    margin-top: 0.5em;
+    color: rgb(23,181,254);
+}
+#icon3{
+    color: rgb(23,181,254);
+}
+#icon4{
+    color: rgb(23,181,254);
+}
+#icon5{
+     color: rgb(23,181,254);
+}
+#icon6{
+    color: rgb(23,181,254);
+}
 .middle{
     background: url("../img/background2.jpg") no-repeat;
     background-size:100% 100%;
-    flex: 15;
+    flex: 18;
     display: flex;
     overflow: auto;
 }
@@ -34,5 +345,164 @@ body{
     background: white;
     margin: 0 auto;
 }
+.middle .box .search{
+    display: flex;
+    height: 20%;
+    width: 100%;
+}
+.middle .box .search .search-log{
+    flex: 1;
+    height: 100%;
+}
+.middle .box .search .search-log .log{
+    background: url(../img/E-Buy04.png);
+    background-repeat: no-repeat;
+    background-size: 110% 85%;
+    -moz-background-size: 80% 80%;
+    background-position: -5px 1px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.middle .box .search .search-box{
+    flex: 4;
+    height: 100%;
+}
+.middle .box .search .search-box .search-box-box{
+    width: 95%;
+    margin: auto;
+    margin-top: 3em;
+    height: 3.26em;
+    border: 2px solid rgb(23,181,254);
+    border-radius: 20px;
+    background: rgb(23,181,254);
+}
+.middle .box .search .search-box .search-box-box .search-box-input{
+    width: 85%;
+    float: left;
+    height: 2.5em;
+    border: 0;
+    margin-left: 1em;
+    margin-top: 0.4em;
+    text-indent: 10px;
+}
+.middle .box .search .search-box .search-box-box .search-text{
+    width: 10%;
+    float: left;
+    height: 3em;
+    line-height: 2.8em;
+    color: white;
+    font-weight: bold;
+    margin-left: 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    letter-spacing: 10px;
+}
+.middle .box .search .search-blank{
+    flex: 1;
+    height: 100%;
+}
+.middle .box .strip{
+    height: 40px;
+    width: 100%;
+    background: rgb(23,181,254);
+}
+.middle .box .navigation-carousel-person{
+    width: 100%;
+    height: 500px;
+    display: flex;
+}
+.middle .box .navigation-carousel-person .navigation{
+    flex: 1;
+    border: 1px solid rgb(130,200,250);
+}
+.middle .box .navigation-carousel-person .navigation ul{
+    height: 100%;
 
+}
+.middle .box .navigation-carousel-person .navigation ul :hover{
+    color: rgb(23,181,254);
+    background: rgb(222,238,253);
+}
+.middle .box .navigation-carousel-person .navigation ul :hover a{
+    color: rgb(23,181,254);
+    background: rgb(222,238,253);
+}
+.middle .box .navigation-carousel-person .navigation ul li{
+    list-style: none;
+    height: 10%;
+    line-height: 50px;
+    padding: 0 2em;
+}
+.middle .box .navigation-carousel-person .navigation ul li :hover{
+    text-decoration: underline;
+}
+.middle .box .navigation-carousel-person .navigation ul li .layui-icon{
+    float: right;
+    text-decoration: none;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content{
+    display: none;
+    height: 65%;
+    width: 43.5%;
+    border: 2px solid rgb(130,200,250);
+    position: absolute;
+    top: 30.1%;
+    left: 24.6%;
+    color: black;
+    text-decoration: none;
+    background: white;
+    padding: 1em;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content :hover{
+    color: black;
+    text-decoration: none;
+    background: white;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type{
+    height: 100%;
+    width: 60%;
+    border-right: 1px solid rgb(224,224,224) ;
+    display: flex;
+    flex-direction: column;
+    padding-right: 1em;
+    float: left;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1{
+    flex: 1;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1 .title{
+    font-weight: bold;
+    height: 2em;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1 .title :hover{
+    color: rgb(23,181,254);
+    cursor: pointer;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1 .title .more{
+    font-size: 0.9em;
+    font-weight: normal;
+    float: right;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1 .type-content{
+    font-size: 0.9em;
+}.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1 .type-content :hover{
+     cursor: pointer;
+ }
 
+.middle .box .navigation-carousel-person .navigation ul li .li-content .three-type .type-1 .type-content span{
+    margin-right: 1em;
+    white-space:nowrap;
+}
+.middle .box .navigation-carousel-person .navigation ul li .li-content .you-like{
+    height: 100%;
+    width: 37%;
+    float: right;
+    text-align: center;
+}
+.middle .box .navigation-carousel-person .carousel{
+    flex: 3;
+}
+.middle .box .navigation-carousel-person .person{
+    flex: 1.5;
+}

@@ -17,14 +17,15 @@ body{
     display: flex;
 }
 .head .log{
-    background: url("../img/E-Buy2.png");
+    background: url("../img/E-Buy04.png");
     background-repeat: no-repeat;
-    background-size: 80% 50%;
+    background-size: 100%;
     -moz-background-size: 80% 80%;
     background-position: center;
     height: 100%;
     width: 10%;
     margin-left: 8%;
+    cursor: pointer;
 }
 .head .login-msg{
     text-align: center;

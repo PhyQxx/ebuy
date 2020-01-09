@@ -19,8 +19,10 @@ layui.use(['layer',"jquery"], function() {
                 success: function (data) {
                     let msg = data.msg;
                     if (msg == "登录成功!") {
+                        localStorage.setItem("userInfo",JSON.stringify(data));
                         //登录成功
                         console.log(msg);
+                        console.log(localStorage.setItem("userInfo",JSON.stringify(data)));
                         window.location.href = "/ebuy/index";
                     } else {
                         //登录失败
@@ -56,6 +58,7 @@ layui.use(['layer',"jquery"], function() {
         }
     });
 
+    //log去首页
     $(".log").on("click",function () {
         window.location.href="/ebuy/index";
     })
