@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+}
+.head{
+    height: 5em;
+}
+.iframe-middle{
+    height: calc(100% - 5em);
+}

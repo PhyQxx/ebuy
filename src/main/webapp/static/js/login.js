@@ -50,10 +50,8 @@ layui.use(['layer',"jquery"], function() {
 
     //回车登录
     $("body").keydown(function () {
-
         if (window.event.keyCode==13) {
             //如果发生了按下回车键事件，回车键对应的编号是13
-
             $(".login-btu").trigger("click"); //则激活登录按钮的click事件
         }
     });

@@ -16,11 +16,62 @@ public class EbuyController {
 
     @Autowired
     private EbuyService ebuyService;
+
+    /**
+     * 页面跳转
+     * @return 裴浩宇
+     */
     //跳转登录页面
     @RequestMapping("/login")
     public String login() {
         return "/login.html";
     }
+
+    //跳转到注册页面
+    @RequestMapping("/register")
+    public String register() {
+        return "register.html";
+    }
+
+    //主页页面
+    @RequestMapping("/index")
+    public String head() {
+        return "/index.html";
+    }
+
+    //中间内容页面
+    @RequestMapping("/middle")
+    public String index() {
+        return "/middle.html";
+    }
+
+    //账户管理页面
+    @RequestMapping("/account")
+    public String account() {
+        return "/account.html";
+    }
+
+    //账户管理-个人首页页面
+    @RequestMapping("/personalHomepage")
+    public String personalHomepage() {
+        return "/personalHomepage.html";
+    }
+
+    //账户管理-账户设置页面
+    @RequestMapping("/accountSettings")
+    public String accountSettings() {
+        return "/accountSettings.html";
+    }
+
+    //账户管理-消息页面
+    @RequestMapping("/message")
+    public String message() {
+        return "/message.html";
+    }
+
+
+
+
 
     //验证登录
     @ResponseBody
@@ -40,12 +91,6 @@ public class EbuyController {
         return result;
     }
 
-    //跳转到注册页面
-    @RequestMapping("/register")
-    public String register() {
-        return "register.html";
-    }
-
     //注册提交
     @RequestMapping("/registerSub")
     @ResponseBody
@@ -63,9 +108,5 @@ public class EbuyController {
         return result;
     }
 
-    //跳转到主页面
-    @RequestMapping("/index")
-    public String index() {
-        return "index.html";
-    }
+
 }

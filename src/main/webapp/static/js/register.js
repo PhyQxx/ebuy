@@ -33,7 +33,10 @@ layui.use(['layer',"jquery"], function() {
                     success:function (data) {
                         if (data.count > 0) {
                             layer.msg("注册成功");
-                            window.location.href="/ebuy/login";
+                            setTimeout(registerSuccess,1000);
+                            function registerSuccess() {
+                                window.location.href="/ebuy/login";
+                            }
                         } else {
                             layer.msg("手机号已被注册或用户名重复!");
                         }
