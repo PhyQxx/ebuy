@@ -5,7 +5,9 @@ import com.phy.ebuy.service.EbuyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -40,6 +42,24 @@ public class EbuyServiceImpl implements EbuyService {
             result.put("count","0");
         }
         result.put("count",count);
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> allOrderTable() {
+        List<Map<String,Object>> result  = ebuyMapper.allOrderTable();
+        for (Map<String, Object> map : result ) {
+            String ids = (String) map.get("commodity_attribute");
+            String[] idses = ids.split(",");
+            List<Map<String,Object>> commodityAttributeList = ebuyMapper.queryDictionary(idses);
+            String commodityAttribute = "";
+            String commodityAttributeString ;
+            for (Map<String, Object> commodityAttributemap : commodityAttributeList ) {
+                commodityAttributeString =  commodityAttributemap.get("type_down")+":"+commodityAttributemap.get("type_down_details")+" ";
+                commodityAttribute += commodityAttributeString;
+            }
+            map.put("commodity_attribute",commodityAttribute);
+        }
         return result;
     }
 }

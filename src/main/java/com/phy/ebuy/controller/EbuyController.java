@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -54,24 +56,50 @@ public class EbuyController {
     //账户管理-个人首页页面
     @RequestMapping("/personalHomepage")
     public String personalHomepage() {
-        return "/personalHomepage.html";
+        return "/account/personalHomepage.html";
     }
 
     //账户管理-账户设置页面
     @RequestMapping("/accountSettings")
     public String accountSettings() {
-        return "/accountSettings.html";
+        return "/account/accountSettings.html";
     }
 
     //账户管理-消息页面
     @RequestMapping("/message")
     public String message() {
-        return "/message.html";
+        return "/account/message.html";
     }
 
+    //账户管理-个人首页-所有订单页面
+    @RequestMapping("/allOrder")
+    public String allOrder() {
+        return "/account/personalHomepage/allOrder.html";
+    }
 
+    //账户管理-个人首页-待付款页面
+    @RequestMapping("/pendingPayment")
+    public String pendingPayment() {
+        return "/account/personalHomepage/pendingPayment.html";
+    }
 
+    //账户管理-个人首页-待发货页面
+    @RequestMapping("/toBeShipped")
+    public String toBeShipped() {
+        return "/account/personalHomepage/toBeShipped.html";
+    }
 
+    //账户管理-个人首页-待收货页面
+    @RequestMapping("/toBeReceived")
+    public String toBeReceived() {
+        return "/account/personalHomepage/toBeReceived.html";
+    }
+
+    //账户管理-个人首页-待评价页面
+    @RequestMapping("/toBeEvaluated")
+    public String toBeEvaluated() {
+        return "/account/personalHomepage/toBeEvaluated.html";
+    }
 
     //验证登录
     @ResponseBody
@@ -108,5 +136,12 @@ public class EbuyController {
         return result;
     }
 
+    //获取全部订单
+    @RequestMapping("/allOrderTable")
+    @ResponseBody
+    public List<Map<String,Object>> allOrderTable() {
+        List<Map<String,Object>> result = ebuyService.allOrderTable();
+        return result;
+    }
 
 }

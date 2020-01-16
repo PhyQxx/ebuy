@@ -5,9 +5,22 @@
 }
 html{
     width: 100%;
-    height: 100%;
 }
 body{
     width: 100%;
-    height: 100%;
+
+}
+.order-type .layui-tab .layui-tab-content .iframe-middle{
+    width: 100%;
+    height: 700px;
+}
+
+.layui-tab-brief>.layui-tab-title .layui-this{
+    color: #17b5fe!important;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{
+    border-bottom: 2px solid #17b5fe!important;
+}
+.layui-tab-title li:hover{
+    color: #17b5fe!important;
 }

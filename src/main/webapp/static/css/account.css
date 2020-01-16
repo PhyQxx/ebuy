@@ -15,7 +15,84 @@ body{
 }
 .head{
     height: 5em;
+	padding: 0 10%;
+	background: #17b5fe;
 }
-.iframe-middle{
-    height: calc(100% - 5em);
+.head .my-logo{
+	float: left;
+	height: 100%;
+	width: 15%;
+	background-image: url("../img/my-logo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.head .my-tab{
+	float: left;
+	width: 50%;
+	height: 100%;
+	padding-left: 5em;
+	padding-right: 10em;
+}
+.head .my-tab ul{
+	display: flex;
+}
+.head .my-tab ul li{
+	flex: 1;
+	text-align: center;
+	line-height: 5em;
+	color: #fff;
+}
+.head .search{
+	float: right;
+	width: 30%;
+	height: 100%;
+
+}
+.head .search input{
+	height: 2em;
+	width: 20em;
+	border: 0;
+	float: left;
+	margin-top: 1.5em;
+}
+.head .search span{
+	display: block;
+	background: rgb(245,245,245);
+	height: 2em;
+	line-height: 2em;
+	float: left;
+	margin-top: 1.5em;
+	text-indent: 15px;
+	letter-spacing: 15px;
+	cursor: pointer;
+	border-left: 1px solid rgb(216,216,216);
+	color: rgb(102,102,102);
+}
+.head .search span:hover{
+	color: rgb(51,51,51);
+}
+.layui-tab{
+	margin: 0!important;
+}
+.layui-tab-title{
+	height: 100%!important;
+}
+.layui-tab-title .layui-this:after{
+	height: calc(100% + 3px)!important;
+}
+.head .my-tab .layui-tab-content .layui-tab-item .iframe-middle{
+    height: 800px;
+	width: 100%;
+}
+.layui-tab-item{
+	width: 100%;
+	height: 100%;
+}
+.layui-tab-content {
+    padding: 10px;
+    width: 300%;
+    height: 900%;
+    margin-left: -61%;
 }

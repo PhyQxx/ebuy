@@ -73,7 +73,7 @@ body{
     position: absolute;
     padding: 1em;
     top: 3em;
-    left: 10%;
+    left: calc(10% - 2px);
     border: 1px solid rgb(238,238,238);
 }
 .head .content .login-information .login-text .personInfo .function{
@@ -177,6 +177,15 @@ body{
 .head .content .login-information .news .news-content .one-news{
     cursor: pointer;
 }
+.head .content .goHomepage{
+    margin-left: 3em;
+    line-height: 3em;
+    float: left;
+    cursor: pointer;
+}
+.head .content .goHomepage:hover{
+    color:rgb(23,181,254);
+}
 .head .content .function{
     display: flex;
     float: right;
@@ -218,6 +227,7 @@ body{
     color: black;
     font-weight: bold;
     overflow: auto;
+    margin-left: -1em;
 }
 .head .content .function .cart .cart-content span{
     color: black;
@@ -356,11 +366,11 @@ body{
     height: 100%;
 }
 .middle .box .search .search-log .log{
-    background: url(../img/E-Buy04.png);
+    background: url(../img/ebuy-logo.png);
     background-repeat: no-repeat;
-    background-size: 110% 85%;
+    background-size: 100% 75%;
     -moz-background-size: 80% 80%;
-    background-position: -5px 1px;
+    background-position: 7px 12px;
     height: 100%;
     width: 100%;
     cursor: pointer;
@@ -372,7 +382,7 @@ body{
 .middle .box .search .search-box .search-box-box{
     width: 95%;
     margin: auto;
-    margin-top: 3em;
+    margin-top: 4.5em;
     height: 3.26em;
     border: 2px solid rgb(23,181,254);
     border-radius: 20px;
@@ -453,8 +463,9 @@ body{
     text-decoration: underline;
 }
 .middle .box .navigation-carousel-person .navigation ul li .layui-icon{
-    float: right;
+    position: absolute;
     text-decoration: none;
+    left: 23%;
 }
 .middle .box .navigation-carousel-person .carousel .li-content{
     display: none;
@@ -695,7 +706,7 @@ body{
 .middle .box .navigation-carousel-person .person .cooperation .app-logo .app-logo-one{
     flex: 1;
     background-repeat: no-repeat!important;
-    background-size: 90% 80%!important;
+    background-size: 90% 96%!important;
     background-position: center!important;
     cursor: pointer!important;
 }
@@ -733,11 +744,11 @@ body{
 }
 .layui-tab-title li{
     min-width: 0px!important;
-    width: 11%;
+    width: 12%;
 }
 .layui-tab{
     padding-left: 1em;
-    padding-right: 2em;
+    padding-right: 1em;
 }
 .layui-tab-content span{
     display: inline-block;

@@ -3,6 +3,7 @@ package com.phy.ebuy.dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
 import java.util.Map;
 @Mapper
 public interface EbuyMapper {
@@ -16,4 +17,14 @@ public interface EbuyMapper {
      * 注册提交
      */
     int registerSub(Map<String,Object> map);
+
+    /**
+     * 所有订单Table
+     */
+    List<Map<String,Object>> allOrderTable();
+
+    /**
+     * 查询字典表
+     */
+    List<Map<String,Object>> queryDictionary(String[] ids);
 }

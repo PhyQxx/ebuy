@@ -17,7 +17,7 @@ body{
     display: flex;
 }
 .head .log{
-    background: url("../img/E-Buy04.png");
+    background: url("../img/ebuy-logo.png");
     background-repeat: no-repeat;
     background-size: 100%;
     -moz-background-size: 80% 80%;
@@ -57,25 +57,26 @@ body{
     margin-top: 10%;
     margin-left: 65%;
     width: 20%;
-    height: 42%;
+    height: 40%;
     background: #FFF3E6;
     padding: 1em;
 }
 .middle .login-box .login-title{
-    height: 18px;
-    line-height: 18px;
+    height: 24px;
+    line-height: 24px;
     font-size: 16px;
     color: #3c3c3c;
-    margin-top: 9px;
-    padding-bottom: 8px;
+    margin-top: 14px;
+
     font-weight: 700;
+    margin-left: 18px;
 }
 .middle .login-box .form .userName{
     height: 2.5em;
     width: 90%;
     background: white;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 .middle .login-box .form .userName .ico1{
     background-color: #ddd;
@@ -111,13 +112,13 @@ body{
     width: 90%;
     background: white;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 .middle .login-box .form .login-btu{
     height: 3em;
     width: 90%;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
     letter-spacing: 15px;
     border: 0;
     display: block;
@@ -133,7 +134,7 @@ body{
 }
 .middle .login-box .function{
     color: #6C6C6C;
-    margin-top: 1em;
+    margin-top: 2em;
     display: flex;
     font-size: 0.8em;
     width: 60%;

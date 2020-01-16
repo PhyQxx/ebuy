@@ -1,6 +1,7 @@
 package com.phy.ebuy.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public interface EbuyService{
@@ -14,4 +15,8 @@ public interface EbuyService{
      */
     Map<String,Object> registerSub(Map<String,Object> parameter);
 
+    /**
+     * 所有订单Table
+     */
+    List<Map<String,Object>> allOrderTable();
 }

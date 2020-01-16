@@ -29,4 +29,36 @@
             ( SELECT RIGHT ( RAND( ), 16 ) )
             );
     </insert>
+
+    <!--获取所有订单-->
+    <select id="allOrderTable" resultType="map">
+    SELECT
+	o.creat_time creat_time,
+	o.order_id order_id,
+	o.businesses_id businesses_id,
+	b.business_name businesses_name,
+	c.commodity_photo commodity_photo,
+	c.commodity_name commodity_name,
+	o.commodity_attribute commodity_attribute,
+	c.commodity_price commodity_price,
+	o.commodity_amount commodity_amount,
+	o.order_status order_status
+FROM
+	ebuy_order o
+	INNER JOIN ebuy_businesses b ON o.businesses_id = b.business_id
+	INNER JOIN ebuy_commodity c ON o.commodity_id = c.commodity_id
+    </select>
+
+    <!--查询字典表-->
+    <select id="queryDictionary" resultType="map">
+        SELECT
+	*
+FROM
+	ebuy_dictionaries
+WHERE
+	id IN
+        <foreach collection="array" open="(" separator="," close=")" item="id">
+        #{id}
+    </foreach>
+    </select>
 </mapper>

@@ -101,13 +101,18 @@ $(".more-equity").on("click",function () {
 
 //log去首页
 $(".middle .log").on("click",function () {
+    window.location.href="/ebuy/middle";
+})
+
+//E-BUY首页
+$(".goHomepage").on("click",function () {
     window.location.href="/ebuy/index";
 })
 
 //用户退出
 $(".sign-out").on("click",function () {
     layer.confirm('确认退出?', function(index){
-        localStorage.setItem("userInfo","");
+        sessionStorage.setItem("userInfo","");
         location.reload();
         layer.close(index);
     });
@@ -116,7 +121,7 @@ $(".sign-out").on("click",function () {
 //跳转到账户管理
 $(".account-management").on("click",function () {
     $(".iframe-middle").attr("src","/ebuy/account");
-    localStorage.setItem("accountIframe","accountSettings");
+    sessionStorage.setItem("accountTab","accountSettings");
 })
 
 layui.use(['layer',"jquery","element","carousel"], function() {
@@ -139,7 +144,7 @@ layui.use(['layer',"jquery","element","carousel"], function() {
     });
 
     //判断登录
-    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
     console.log(userInfo);
     if (userInfo.user_name != "" || userInfo.user_name != null){
         $(".login-information").css("display","block");
@@ -172,6 +177,18 @@ layui.use(['layer',"jquery","element","carousel"], function() {
             $(".business").css("display","block");
         }
     }
+
+    //头像去个人首页
+    $(".head .content .login-information .login-text .personInfo .info .head-portrait").on("click",function () {
+        $(".iframe-middle").attr("src","/ebuy/account");
+        sessionStorage.setItem("accountTab","personalHomepage");
+    })
+
+    //middle页面中的头像去个人首页
+    $(".middle .box .navigation-carousel-person .person .person-person .head-portrait .photo,.middle .box .navigation-carousel-person .person .person-person .person-name").on("click",function () {
+        $(".iframe-middle", window.parent.document).attr("src","/ebuy/account");
+        sessionStorage.setItem("accountTab","personalHomepage");
+    })
 
     //联系客服
     $(".service").on("click",function () {

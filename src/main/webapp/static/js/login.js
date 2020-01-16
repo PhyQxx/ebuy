@@ -19,7 +19,7 @@ layui.use(['layer',"jquery"], function() {
                 success: function (data) {
                     let msg = data.msg;
                     if (msg == "登录成功!") {
-                        localStorage.setItem("userInfo",JSON.stringify(data));
+                        sessionStorage.setItem("userInfo",JSON.stringify(data));
                         //登录成功
                         console.log(msg);
                         console.log(localStorage.setItem("userInfo",JSON.stringify(data)));
