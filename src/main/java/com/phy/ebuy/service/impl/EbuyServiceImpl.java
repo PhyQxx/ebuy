@@ -5,6 +5,7 @@ import com.phy.ebuy.service.EbuyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,8 +47,11 @@ public class EbuyServiceImpl implements EbuyService {
     }
 
     @Override
-    public List<Map<String, Object>> allOrderTable() {
-        List<Map<String,Object>> result  = ebuyMapper.allOrderTable();
+    public List<Map<String, Object>> allOrderTable(String orderStatus) {
+        if ("05".equals(orderStatus)) {
+            orderStatus = null;
+        }
+        List<Map<String,Object>> result  = ebuyMapper.allOrderTable(orderStatus);
         for (Map<String, Object> map : result ) {
             String ids = (String) map.get("commodity_attribute");
             String[] idses = ids.split(",");
@@ -59,6 +63,16 @@ public class EbuyServiceImpl implements EbuyService {
                 commodityAttribute += commodityAttributeString;
             }
             map.put("commodity_attribute",commodityAttribute);
+        }
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> typeDown(String[] typeDowns) {
+        List<Map<String,Object>> result = new ArrayList<>();
+        for (int i = 0; i < typeDowns.length; i++) {
+            String[] one = {};
+            one = ebuyMapper.typeDown(typeDowns[i]);
         }
         return result;
     }

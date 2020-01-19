@@ -1,6 +1,7 @@
 package com.phy.ebuy.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -21,10 +22,16 @@ public interface EbuyMapper {
     /**
      * 所有订单Table
      */
-    List<Map<String,Object>> allOrderTable();
+    List<Map<String,Object>> allOrderTable(String orderStatus);
 
     /**
      * 查询字典表
      */
     List<Map<String,Object>> queryDictionary(String[] ids);
+
+    /**
+     * 获取商品分类
+     */
+    String[] typeDown(String typeDown);
+
 }

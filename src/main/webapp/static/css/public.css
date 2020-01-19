@@ -1,0 +1,10 @@
+.hand-shape{
+    cursor: pointer;
+}
+.selection-text{
+    cursor: pointer;
+}
+.selection-text:hover{
+    color: #17b5fe;
+    text-decoration: underline;
+}

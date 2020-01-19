@@ -12,14 +12,14 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
         type:"post",
         dataType:"json",
         data:{
-            orderStatus:"02",
+            orderStatus:"03",
         },
         success:function (data) {
             orderInfo = data;
             let orderTable = "";
             for (let i = 0; i < data.length; i++) {
                 let orderOne = "";
-                //待发货
+                //待收货
                 orderOne = `<div class="oneOrder">
                     <div class="top">
                         <div class="timeAndOrderId">
@@ -43,18 +43,23 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
                         </div>
                         <div class="commodityAmount">1</div>
                         <div class="commodityOperation">
-                            <span>退款/退货</span>
+                            <span>退款/退换货</span>
+                            <span>投诉商家</span>
+                            <span>退运保险</span>
                         </div>
                         <div class="actualPayment">
-                            <span>￥${(data[i].commodity_price * data[i].commodity_amount)}</span>
+                            <span>￥${data[i].commodity_name * data[i].commodity_amount}</span>
                             <span>(含运费：￥0.00)</span>
                         </div>
                         <div class="orderStatus">
-                            <span>买家已付款</span>
+                            <span>等待买家付款</span>
                             <span>订单详情</span>
+                            <span>花呗账单</span>
+                            <span class="evaluate">查看物流</span>
                         </div>
                         <div class="orderOperation">
-                            <span>提醒卖家发货</span>
+                            <button>确认收货</button>
+                            <span>申请开票</span>
                         </div>
                     </div>
                 </div>`

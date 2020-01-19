@@ -31,7 +31,7 @@
     </insert>
 
     <!--获取所有订单-->
-    <select id="allOrderTable" resultType="map">
+    <select id="allOrderTable" resultType="map" parameterType="String">
     SELECT
 	o.creat_time creat_time,
 	o.order_id order_id,
@@ -47,6 +47,10 @@ FROM
 	ebuy_order o
 	INNER JOIN ebuy_businesses b ON o.businesses_id = b.business_id
 	INNER JOIN ebuy_commodity c ON o.commodity_id = c.commodity_id
+        where 1 = 1
+        <if test="orderStatus != null and orderStatus != ''">
+          and  order_status=#{orderStatus}
+        </if>
     </select>
 
     <!--查询字典表-->
@@ -60,5 +64,15 @@ WHERE
         <foreach collection="array" open="(" separator="," close=")" item="id">
         #{id}
     </foreach>
+    </select>
+
+    <!--获取商品分类-->
+    <select id="typeDown" resultType="string" parameterType="string">
+        SELECT
+	type_down_details
+FROM
+	ebuy_dictionaries
+WHERE
+	type_down = #{typeDown}
     </select>
 </mapper>

@@ -11,12 +11,14 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
         url:"/ebuy/allOrderTable",
         type:"post",
         dataType:"json",
-        data:{},
+        data:{
+            orderStatus:"05",
+        },
         success:function (data) {
             orderInfo = data;
             let orderTable = "";
             for (let i = 0; i < data.length; i++) {
-                let order = "";
+                let orderOne = "";
                 //待付款
                 if (data[i].order_status == "01") {
                     orderOne = `<div class="oneOrder">

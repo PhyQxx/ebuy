@@ -12,15 +12,15 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
         type:"post",
         dataType:"json",
         data:{
-            orderStatus:"02",
+            orderStatus:"04",
         },
         success:function (data) {
             orderInfo = data;
             let orderTable = "";
             for (let i = 0; i < data.length; i++) {
                 let orderOne = "";
-                //待发货
-                orderOne = `<div class="oneOrder">
+                //待评价
+                orderOne = ` <div class="oneOrder">
                     <div class="top">
                         <div class="timeAndOrderId">
                             <div class="time">${data[i].creat_time}</div>
@@ -43,21 +43,24 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
                         </div>
                         <div class="commodityAmount">1</div>
                         <div class="commodityOperation">
-                            <span>退款/退货</span>
+                            <span>申请售后</span>
+                            <span>投诉商家</span>
                         </div>
                         <div class="actualPayment">
-                            <span>￥${(data[i].commodity_price * data[i].commodity_amount)}</span>
+                            <span>￥${data[i].commodity_name * data[i].commodity_amount}</span>
                             <span>(含运费：￥0.00)</span>
                         </div>
                         <div class="orderStatus">
-                            <span>买家已付款</span>
+                            <span>交易成功</span>
                             <span>订单详情</span>
+                            <span>花呗账单</span>
+                            <span>查看物流</span>
                         </div>
                         <div class="orderOperation">
-                            <span>提醒卖家发货</span>
+                            <div class="evaluate">评价</div>
                         </div>
                     </div>
-                </div>`
+                </div>`;
                 orderTable += orderOne;
             }
             $(".table-body").html(orderTable);

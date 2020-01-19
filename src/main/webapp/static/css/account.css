@@ -14,17 +14,17 @@ body{
     flex-direction:column;
 }
 .head{
-    height: 5em;
-	padding: 0 10%;
+	height: 5em;
+	padding: 0 17.5%;
 	background: #17b5fe;
 }
 .head .my-logo{
 	float: left;
 	height: 100%;
 	width: 15%;
-	background-image: url("../img/my-logo.png");
+	background-image: url(../img/my-logo.png);
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: -16px 0;
 	background-size: 100% 100%;
 	cursor: pointer;
 }
@@ -48,6 +48,7 @@ body{
 	float: right;
 	width: 30%;
 	height: 100%;
+	margin-right: -6px;
 
 }
 .head .search input{

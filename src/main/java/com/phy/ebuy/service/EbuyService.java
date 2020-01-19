@@ -18,5 +18,10 @@ public interface EbuyService{
     /**
      * 所有订单Table
      */
-    List<Map<String,Object>> allOrderTable();
+    List<Map<String,Object>> allOrderTable(String orderStatus);
+
+    /**
+     * 获取商品分类
+     */
+    List<Map<String, Object>> typeDown(String[] typeDown);
 }

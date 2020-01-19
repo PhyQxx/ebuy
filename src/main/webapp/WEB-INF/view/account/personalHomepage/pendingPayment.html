@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>待付款</title>
     <link rel="stylesheet" href="../../../../static/css/pendingPayment.css">
+    <link rel="stylesheet" href="../../../../static/css/allOrder.css">
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <script src="../../static/layui/layui.all.js"></script>
+
+
 </head>
 <body>
 <div class="content">
-    <!--<div class="orderSearch">-->
-        <!--<input type="text" placeholder="输入商品标题或订单号进行搜索" name="" id="" value="">-->
-        <!--<span class="span">订单搜索</span>-->
-    <!--</div>-->
     <div class="table">
         <div class="table-head">
             <div class="div1">宝贝</div>
@@ -22,175 +23,11 @@
             <div class="div4">交易操作</div>
         </div>
         <div class="table-body">
-            <!--待付款-->
-            <div class="oneOrder">
-            <div class="top">
-            <div class="timeAndOrderId">
-            <div class="time">2020-01-13</div>
-            <div class="orderId">订单号: 814491555504605953</div>
-            </div>
-            <div class="businessName">
-            <span>幽炫数码专营店</span>
-            </div>
-            </div>
-            <div class="bottom">
-            <div class="commodityInfo">
-            <img src="../../../../static/img/commodity/chufang01.jpg" class="commodityPhoto" alt=""/>
-            <div class="commodityNameAndCommodityAttribute">
-            <div class="commodityName">【活动】威刚16G 8G 4G 2666 2400 2133笔记本电脑内存条ddr4高速 [交易快照]</div>
-            <div class="commodityAttribute">内存频率：2400MHz颜色分类：威刚 8G DDR4 笔记本内存条</div>
-            </div>
-            </div>
-            <div class="commodityPrice">
-            ￥229.00
-            </div>
-            <div class="commodityAmount">1</div>
-            <div class="commodityOperation">
-            <span>违规举报</span>
-            </div>
-            <div class="actualPayment">
-            <span>￥241.00</span>
-            <span>(含运费：￥12.00)</span>
-            </div>
-            <div class="orderStatus">
-            <span>等待买家付款</span>
-            <span>订单详情</span>
-            </div>
-            <div class="orderOperation">
-            <button>立即付款</button>
-            <span>找朋友帮忙付</span>
-            <span>取消订单</span>
-            <span>修改订单</span>
-            </div>
-            </div>
-            </div>
-            <!--&lt;!&ndash;待发货&ndash;&gt;-->
-            <!--<div class="oneOrder">-->
-            <!--<div class="top">-->
-            <!--<div class="timeAndOrderId">-->
-            <!--<div class="time">2020-01-13</div>-->
-            <!--<div class="orderId">订单号: 814491555504605953</div>-->
-            <!--</div>-->
-            <!--<div class="businessName">-->
-            <!--<span>幽炫数码专营店</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="bottom">-->
-            <!--<div class="commodityInfo">-->
-            <!--<img src="../../../../static/img/commodity/chufang01.jpg" class="commodityPhoto" alt=""/>-->
-            <!--<div class="commodityNameAndCommodityAttribute">-->
-            <!--<div class="commodityName">【活动】威刚16G 8G 4G 2666 2400 2133笔记本电脑内存条ddr4高速 [交易快照]</div>-->
-            <!--<div class="commodityAttribute">内存频率：2400MHz颜色分类：威刚 8G DDR4 笔记本内存条</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="commodityPrice">-->
-            <!--￥229.00-->
-            <!--</div>-->
-            <!--<div class="commodityAmount">1</div>-->
-            <!--<div class="commodityOperation">-->
-            <!--<span>退款/退货</span>-->
-            <!--</div>-->
-            <!--<div class="actualPayment">-->
-            <!--<span>￥241.00</span>-->
-            <!--<span>(含运费：￥12.00)</span>-->
-            <!--</div>-->
-            <!--<div class="orderStatus">-->
-            <!--<span>买家已付款</span>-->
-            <!--<span>订单详情</span>-->
-            <!--</div>-->
-            <!--<div class="orderOperation">-->
-            <!--<span>提醒卖家发货</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;待收货&ndash;&gt;-->
-            <!--<div class="oneOrder">-->
-            <!--<div class="top">-->
-            <!--<div class="timeAndOrderId">-->
-            <!--<div class="time">2020-01-13</div>-->
-            <!--<div class="orderId">订单号: 814491555504605953</div>-->
-            <!--</div>-->
-            <!--<div class="businessName">-->
-            <!--<span>幽炫数码专营店</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="bottom">-->
-            <!--<div class="commodityInfo">-->
-            <!--<img src="../../../../static/img/commodity/chufang01.jpg" class="commodityPhoto" alt=""/>-->
-            <!--<div class="commodityNameAndCommodityAttribute">-->
-            <!--<div class="commodityName">【活动】威刚16G 8G 4G 2666 2400 2133笔记本电脑内存条ddr4高速 [交易快照]</div>-->
-            <!--<div class="commodityAttribute">内存频率：2400MHz颜色分类：威刚 8G DDR4 笔记本内存条</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="commodityPrice">-->
-            <!--￥229.00-->
-            <!--</div>-->
-            <!--<div class="commodityAmount">1</div>-->
-            <!--<div class="commodityOperation">-->
-            <!--<span>退款/退换货</span>-->
-            <!--<span>投诉商家</span>-->
-            <!--<span>退运保险</span>-->
-            <!--</div>-->
-            <!--<div class="actualPayment">-->
-            <!--<span>￥241.00</span>-->
-            <!--<span>(含运费：￥12.00)</span>-->
-            <!--</div>-->
-            <!--<div class="orderStatus">-->
-            <!--<span>等待买家付款</span>-->
-            <!--<span>订单详情</span>-->
-            <!--<span>花呗账单</span>-->
-            <!--<span class="evaluate">查看物流</span>-->
-            <!--</div>-->
-            <!--<div class="orderOperation">-->
-            <!--<button>确认收货</button>-->
-            <!--<span>申请开票</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;待评价&ndash;&gt;-->
-            <!--<div class="oneOrder">-->
-            <!--<div class="top">-->
-            <!--<div class="timeAndOrderId">-->
-            <!--<div class="time">2020-01-13</div>-->
-            <!--<div class="orderId">订单号: 814491555504605953</div>-->
-            <!--</div>-->
-            <!--<div class="businessName">-->
-            <!--<span>幽炫数码专营店</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="bottom">-->
-            <!--<div class="commodityInfo">-->
-            <!--<img src="../../../../static/img/commodity/chufang01.jpg" class="commodityPhoto" alt=""/>-->
-            <!--<div class="commodityNameAndCommodityAttribute">-->
-            <!--<div class="commodityName">【活动】威刚16G 8G 4G 2666 2400 2133笔记本电脑内存条ddr4高速 [交易快照]</div>-->
-            <!--<div class="commodityAttribute">内存频率：2400MHz颜色分类：威刚 8G DDR4 笔记本内存条</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="commodityPrice">-->
-            <!--￥229.00-->
-            <!--</div>-->
-            <!--<div class="commodityAmount">1</div>-->
-            <!--<div class="commodityOperation">-->
-            <!--<span>申请售后</span>-->
-            <!--<span>投诉商家</span>-->
-            <!--</div>-->
-            <!--<div class="actualPayment">-->
-            <!--<span>￥241.00</span>-->
-            <!--<span>(含运费：￥12.00)</span>-->
-            <!--</div>-->
-            <!--<div class="orderStatus">-->
-            <!--<span>交易成功</span>-->
-            <!--<span>订单详情</span>-->
-            <!--<span>花呗账单</span>-->
-            <!--<span>查看物流</span>-->
-            <!--</div>-->
-            <!--<div class="orderOperation">-->
-            <!--<div class="evaluate">评价</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
     </div>
 </div>
 </body>
+<script src="../../static/layui/layui.js"></script>
+<script src="../../static/js/jquery-1.12.2.js"></script>
+<script src="../../../../static/js/pendingPayment.js"></script>
 </html>

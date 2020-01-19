@@ -101,6 +101,12 @@ public class EbuyController {
         return "/account/personalHomepage/toBeEvaluated.html";
     }
 
+    //购物车页面
+    @RequestMapping("/cart")
+    public String cart() {
+        return "/cart.html";
+    }
+
     //验证登录
     @ResponseBody
     @RequestMapping("/verifyLogin")
@@ -139,8 +145,19 @@ public class EbuyController {
     //获取全部订单
     @RequestMapping("/allOrderTable")
     @ResponseBody
-    public List<Map<String,Object>> allOrderTable() {
-        List<Map<String,Object>> result = ebuyService.allOrderTable();
+    public List<Map<String,Object>> allOrderTable(@RequestParam("orderStatus") String orderStatus) {
+        List<Map<String,Object>> result = ebuyService.allOrderTable(orderStatus);
+        return result;
+    }
+
+    //获取商品分类
+    @RequestMapping("/commodityType")
+    @ResponseBody
+    public List<Map<String,Object>> commodityType(String typeDowns) {
+        String str = typeDowns.substring(typeDowns.indexOf("[")+2,typeDowns.indexOf("]")-1);
+        String[] typeDownsArr = str.split("\",\"");
+        List<Map<String,Object>> result = new ArrayList<>();
+        result = ebuyService.typeDown(typeDownsArr);
         return result;
     }
 

@@ -98,6 +98,10 @@ $(".app-logo-one").on("click",function () {
 $(".more-equity").on("click",function () {
     layer.msg("功能正在完善,请联系管理员:15006732580!")
 })
+//消息正在完善
+$(".one-news,.news").on("click",function () {
+    layer.msg("功能正在完善,请联系管理员:15006732580!")
+})
 
 //log去首页
 $(".middle .log").on("click",function () {
@@ -179,7 +183,7 @@ layui.use(['layer',"jquery","element","carousel"], function() {
     }
 
     //头像去个人首页
-    $(".head .content .login-information .login-text .personInfo .info .head-portrait").on("click",function () {
+    $(".head .content .login-information .login-text .personInfo .info .head-portrait,.login-information .login-text").on("click",function () {
         $(".iframe-middle").attr("src","/ebuy/account");
         sessionStorage.setItem("accountTab","personalHomepage");
     })
@@ -208,4 +212,10 @@ layui.use(['layer',"jquery","element","carousel"], function() {
     $(".search-text").on("click",function () {
         layer.msg($(".search-box-input").val())
     })
+
+    //购物车
+    $(".cart").on("click",function () {
+        $(".iframe-middle").attr("src","/ebuy/cart");
+    })
+
 })
