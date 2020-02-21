@@ -32,6 +32,15 @@ public interface EbuyMapper {
     /**
      * 获取商品分类
      */
-    String[] typeDown(String typeDown);
+    List<String> typeDown(String typeDown);
 
+    /**
+     * 获取购物车信息
+     */
+    List<Map<String,Object>> getCartInfo(String userId);
+
+    /**
+     * 获取商品列表
+     */
+    List<Map<String,Object>> commodityInfo(String keyword);
 }

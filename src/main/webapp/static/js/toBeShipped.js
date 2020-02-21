@@ -27,12 +27,12 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
                             <div class="orderId">订单号: ${data[i].order_id}</div>
                         </div>
                         <div class="businessName">
-                            <span>${data[i].businesses_name}</span>
+                            <span>${data[i].business_name}</span>
                         </div>
                     </div>
                     <div class="bottom">
                         <div class="commodityInfo">
-                            <img src="../../../../static/img/commodity/${data[i].commodity_photo}" class="commodityPhoto" alt=""/>
+                            <img src="../../../../static/img/commodity/${data[i].commodity_type}/${data[i].commodity_type_details}/${data[i].commodity_photo}" class="commodityPhoto" alt=""/>
                             <div class="commodityNameAndCommodityAttribute">
                                 <div class="commodityName">${data[i].commodity_name}</div>
                                 <div class="commodityAttribute">${data[i].commodity_attribute}</div>

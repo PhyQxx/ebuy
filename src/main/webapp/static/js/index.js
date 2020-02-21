@@ -183,7 +183,7 @@ layui.use(['layer',"jquery","element","carousel"], function() {
     }
 
     //头像去个人首页
-    $(".head .content .login-information .login-text .personInfo .info .head-portrait,.login-information .login-text").on("click",function () {
+    $(".head .head-portrait,.login-information .login-text .info .head-portrait").on("click",function () {
         $(".iframe-middle").attr("src","/ebuy/account");
         sessionStorage.setItem("accountTab","personalHomepage");
     })
@@ -208,14 +208,13 @@ layui.use(['layer',"jquery","element","carousel"], function() {
         }
     });
 
-    //搜索
+    /*//搜索
     $(".search-text").on("click",function () {
         layer.msg($(".search-box-input").val())
-    })
+    })*/
 
     //购物车
     $(".cart").on("click",function () {
         $(".iframe-middle").attr("src","/ebuy/cart");
     })
-
 })

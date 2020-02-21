@@ -1,0 +1,134 @@
+p,span{
+    text-decoration: none;
+}
+.middle .box{
+    height: fit-content;
+}
+.middle .commodity-list{
+    width: 80%;
+    margin: 0 auto;
+}
+.middle .commodity-list .commodity{
+    height: 14em;
+    margin-top: 1em;
+}
+.commodity{
+    margin-top: 1em;
+    /*background: rgb(245,245,245);*/
+    /*height: 3em;*/
+    /*line-height: 3em;*/
+    height: 12em;
+}
+.commodity .business-name{
+    height: 2em;
+}
+.business-name span:nth-child(4){
+    float: right;
+    margin: 0 1rem;
+}
+.business-name span:nth-child(5){
+    float: right;
+}
+.commodity .one-commodity{
+    display: flex;
+    border: 1px solid rgb(204,204,204);
+    height: 10em;
+}
+.commodity .one-commodity .check{
+    flex: 1;
+    padding: 1em 0 0 1em;
+}
+.middle .one-commodity .commodity-info{
+    flex:14;
+    text-align: center;
+    padding: 1em;
+}
+.commodity-info img{
+    height: 6rem;
+    width: 6rem;
+    float: left;
+}
+.commodity-info .commodity-name{
+    float: left;
+    width: 7.3rem;
+    margin-left: 1rem;
+    text-align: initial;
+    color: rgb(60,60,60);
+}
+.middle .one-commodity .commodity-attribute{
+    flex: 8;
+    text-align: inherit;
+    padding: 1em;
+    color: rgb(156,156,156);
+}
+.middle .one-commodity .commodity-attribute span{
+    display: inline-block;
+}
+.middle .one-commodity .commodity-attribute .attribute{
+    margin: 0.3rem 0;
+}
+.attribute select{
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+.middle .one-commodity .commodity-price{
+    flex: 6;
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+}
+.commodity-price span:nth-child(3){
+    font-weight: normal;
+
+}
+.middle .one-commodity .commodity-amount{
+    text-align: center;
+    padding:1em;
+}
+.commodity-amount .amount-box{
+    width: 5rem;
+    display: flex;
+    margin: 0 auto;
+    height: 2em;
+    line-height: 2em;
+}
+.amount-box .subtraction{
+    width: 1rem;
+    background: rgb(240,240,240);
+    border: 1px solid rgb(240,240,240);
+    user-select: none;
+}
+.amount-box input{
+    width: 3rem;
+
+    text-align: center;
+}
+.amount-box .addition{
+    width: 1rem;
+    background: rgb(240,240,240);
+    border: 1px solid rgb(240,240,240);
+    user-select: none;
+}
+.middle .one-commodity .commodity-describe{
+    flex: 12;
+    padding: 1rem 1rem 1rem 2rem;
+    overflow: auto;
+}
+.middle .one-commodity .operation{
+    flex:8;
+    text-align: center;
+    padding: 1em;
+}
+.operation p{
+    margin-top: 0.2rem;
+}
+.operation p :hover{
+
+}
+.arithmetic:hover{
+    color: #17b5fe;
+    border: 1px solid #17b5fe!important;
+}
+.frame{
+    border: 1px dashed #DBEBFE;
+}

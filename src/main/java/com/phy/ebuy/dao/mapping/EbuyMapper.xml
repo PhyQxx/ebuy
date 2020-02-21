@@ -33,10 +33,13 @@
     <!--获取所有订单-->
     <select id="allOrderTable" resultType="map" parameterType="String">
     SELECT
+
 	o.creat_time creat_time,
 	o.order_id order_id,
-	o.businesses_id businesses_id,
-	b.business_name businesses_name,
+	o.business_id business_id,
+	b.business_name business_name,
+    c.commodity_type commodity_type,
+    c.commodity_type_details commodity_type_details,
 	c.commodity_photo commodity_photo,
 	c.commodity_name commodity_name,
 	o.commodity_attribute commodity_attribute,
@@ -45,7 +48,7 @@
 	o.order_status order_status
 FROM
 	ebuy_order o
-	INNER JOIN ebuy_businesses b ON o.businesses_id = b.business_id
+	INNER JOIN ebuy_business b ON o.business_id = b.business_id
 	INNER JOIN ebuy_commodity c ON o.commodity_id = c.commodity_id
         where 1 = 1
         <if test="orderStatus != null and orderStatus != ''">
@@ -74,5 +77,57 @@ FROM
 	ebuy_dictionaries
 WHERE
 	type_down = #{typeDown}
+    </select>
+
+    <!--获取购物车-->
+    <select id="getCartInfo" parameterType="string" resultType="map">
+      SELECT
+ca.business_id business_id,
+b.business_name business_name,
+ca.commodity_id commodity_id,
+co.commodity_type commodity_type,
+co.commodity_type_details commodity_type_details,
+co.commodity_photo commodity_photo,
+co.commodity_name commodity_name,
+ca.commodity_attribute commodity_attribute,
+co.commodity_price commodity_price,
+ca.commodity_amount commodity_amount,
+co.commodity_amount commodity_amountall
+from
+ebuy_cart ca inner join ebuy_commodity co
+on ca.commodity_id = co.commodity_id
+inner join ebuy_business b
+on ca.business_id = b.business_id
+where
+user_id = #{userId}
+
+    </select>
+
+    <!--获取商品列表-->
+    <select id="commodityInfo" parameterType="string" resultType="map">
+        SELECT
+c.business_id business_id,
+b.business_name business_name,
+c.commodity_id commodity_id,
+c.commodity_photo commodity_photo,
+c.commodity_type commodity_type,
+c.commodity_type_details commodity_type_details,
+c.commodity_name commodity_name,
+ca.commodity_attribute commodity_attribute,
+c.commodity_price commodity_price,
+c.commodity_amount commodity_amount,
+c.commodity_describe commodity_describe,
+c.paid_number paid_number,
+b.business_address business_address
+from
+ebuy_commodity c inner join ebuy_business b on c.business_id = b.business_id
+inner join ebuy_commodity_attribute ca on c.commodity_id = ca.commodity_id
+        where
+        1=1
+        <if test="keyword!=null and keyword!=''">
+            and c.commodity_name like concat('%',#{keyword},'%')
+        </if>
+        ORDER BY
+        c.commodity_type ,c.commodity_type_details
     </select>
 </mapper>

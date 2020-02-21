@@ -137,6 +137,9 @@ body{
     height: 10em;
 
 }
+.middle .cart-info .info-one .one-commodity:hover{
+    border:1px dashed #17b5fe;
+}
 .middle .cart-info .info-one .one-commodity .check{
     flex: 1;
     padding: 1em 0 0 1em;
@@ -214,9 +217,9 @@ body{
 .operation p{
     margin-top: 0.2rem;
 }
-.operation p:nth-child(3){
+/*.operation p:nth-child(3){
     display: none;
-}
+}*/
 .arithmetic:hover{
     color: #17b5fe;
     border: 1px solid #17b5fe!important;
@@ -224,16 +227,20 @@ body{
 .frame{
     border: 1px dashed #DBEBFE;
 }
+.frame:hover{
+    border:1px dashed #DBEBFE;
+}
 .commodity-attribute i{
-    /*display: none;*/
+    display: none;
     float: right;
     margin: -1rem;
 }
 .commodity-attribute span{
-    display: none;
+    /*display: none;*/
     float: right;
     margin: -1rem;
     background: #17b5fe;
     color: #fff;
     cursor: pointer;
 }
+

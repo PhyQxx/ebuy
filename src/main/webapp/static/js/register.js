@@ -11,10 +11,16 @@ layui.use(['layer',"jquery"], function() {
         let againPassWord = $("#againPassWord").val();
         if (mobile == '' || mobile == null) {
             layer.msg("请输入手机号!")
+        } else if (mobile.length < 11) {
+            layer.msg("请输入正确的手机号!")
         } else if (userName == '' || userName == null) {
             layer.msg("请输入用户名!")
+        } else if (userName.length < 6) {
+            layer.msg("用户名不能低于6位数!")
         } else if (passWord == '' || passWord == null) {
             layer.msg("请输入密码!")
+        } else if (passWord.length < 6) {
+            layer.msg("密码过于简单!")
         } else if (againPassWord == '' || againPassWord == null) {
             layer.msg("请确认密码!")
         } else if (againPassWord != passWord) {

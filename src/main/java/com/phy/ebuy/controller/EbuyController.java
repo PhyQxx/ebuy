@@ -107,6 +107,12 @@ public class EbuyController {
         return "/cart.html";
     }
 
+    //商品页面
+    @RequestMapping("/commodity")
+    public String commodity() {
+        return "/commodity.html";
+    }
+
     //验证登录
     @ResponseBody
     @RequestMapping("/verifyLogin")
@@ -153,11 +159,27 @@ public class EbuyController {
     //获取商品分类
     @RequestMapping("/commodityType")
     @ResponseBody
-    public List<Map<String,Object>> commodityType(String typeDowns) {
+    public Map<String,Object> commodityType(String typeDowns) {
         String str = typeDowns.substring(typeDowns.indexOf("[")+2,typeDowns.indexOf("]")-1);
         String[] typeDownsArr = str.split("\",\"");
-        List<Map<String,Object>> result = new ArrayList<>();
+        Map<String,Object> result = new HashMap<>();
         result = ebuyService.typeDown(typeDownsArr);
+        return result;
+    }
+
+    //购物车
+    @RequestMapping("/getCartInfo")
+    @ResponseBody
+    public List<Map<String,Object>> getCartInfo(@RequestParam("userId")String userId) {
+        List<Map<String, Object>> result = ebuyService.getCartInfo(userId);
+        return result;
+    }
+
+    //查询商品
+    @RequestMapping("/commodityInfo")
+    @ResponseBody
+    public List<Map<String,Object>> commodityInfo(@RequestParam("keyword")String keyword) {
+        List<Map<String, Object>> result = ebuyService.commodityInfo(keyword);
         return result;
     }
 

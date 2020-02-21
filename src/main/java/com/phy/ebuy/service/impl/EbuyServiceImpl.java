@@ -68,12 +68,25 @@ public class EbuyServiceImpl implements EbuyService {
     }
 
     @Override
-    public List<Map<String, Object>> typeDown(String[] typeDowns) {
-        List<Map<String,Object>> result = new ArrayList<>();
+    public Map<String,Object> typeDown(String[] typeDowns) {
+        Map<String,Object> result = new HashMap<>();
         for (int i = 0; i < typeDowns.length; i++) {
-            String[] one = {};
+            List<String> one = new ArrayList<>();
             one = ebuyMapper.typeDown(typeDowns[i]);
+            result.put(typeDowns[i]+","+i,one);
         }
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> getCartInfo(String userId) {
+        List<Map<String, Object>> result = ebuyMapper.getCartInfo(userId);
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> commodityInfo(String keyword) {
+        List<Map<String, Object>> result = ebuyMapper.commodityInfo(keyword);
         return result;
     }
 }
