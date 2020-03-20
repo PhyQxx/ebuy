@@ -89,4 +89,10 @@ public class EbuyServiceImpl implements EbuyService {
         List<Map<String, Object>> result = ebuyMapper.commodityInfo(keyword);
         return result;
     }
+
+    @Override
+    public List<Map<String,Object>> orderNumber(String userId) {
+        List<Map<String,Object>> result = ebuyMapper.orderNumber(userId);
+        return result;
+    }
 }

@@ -1,13 +1,14 @@
-.hand-shape{
-    cursor: pointer;
-}
+
+/*选中小手*/
 .selection-text{
-    cursor: pointer;
+    cursor: pointer !important;
 }
+/*选中变色*/
 .selection-text:hover{
-    color: #17b5fe;
-    text-decoration: underline;
+    color: #17b5fe !important;
+    text-decoration: underline !important;
 }
+/*灰色字体*/
 .gray-font{
-    color:rgb(136,136,136);
+    color:rgb(136,136,136) !important;
 }

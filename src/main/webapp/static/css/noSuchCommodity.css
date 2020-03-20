@@ -1,0 +1,14 @@
+.no{
+    margin: 2rem auto;
+    width: 22.7rem;
+    height: 8rem;
+}
+.no img{
+    float: left;
+    height: 8rem;
+}
+.no p{
+    float: left;
+    height: 8rem;
+    line-height: 8rem;
+}

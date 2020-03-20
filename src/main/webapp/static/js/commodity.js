@@ -33,38 +33,45 @@ layui.use(['layer',"jquery","element","carousel"], function() {
         dataType:"json",
         type:"post",
         success:function (data) {
-
-            let commodityList = '';
-            for (let i = 0; i < data.length; i++) {
-                //商品属性
-                let attribute = data[i].commodity_attribute.split(";");
-                let attrs = '';
-                for (let j = 0; j < attribute.length; j++) {
-                    let attributeName = attribute[j].split("：");
-                    let attributeText = attributeName[1].split(",");
-                    let texts = '';
-                    for (let k = 0; k < attributeText.length; k++) {
-                        let text = `<option value="0">${attributeText[k]}</option>`;
-                        texts += text;
-                    }
-                    let attr = `<span>${attributeName[0]}:</span>
+            if (data.length == 0) {
+                let no = `
+                <div class="no">
+                    <img src="../../static/img/noLogo.png"/>
+                    <p>没有符合条件的宝贝，请尝试其他搜索条件。</p>
+                </div>`;
+                $(".commodity-list").html(no);
+            } else {
+                let commodityList = '';
+                for (let i = 0; i < data.length; i++) {
+                    //商品属性
+                    let attribute = data[i].commodity_attribute.split(";");
+                    let attrs = '';
+                    for (let j = 0; j < attribute.length; j++) {
+                        let attributeName = attribute[j].split("：");
+                        let attributeText = attributeName[1].split(",");
+                        let texts = '';
+                        for (let k = 0; k < attributeText.length; k++) {
+                            let text = `<option value="${attributeText[k]}">${attributeText[k]}</option>`;
+                            texts += text;
+                        }
+                        let attr = `<span>${attributeName[0]}:</span>
                                 <div class="attribute">
-                                    <select name="">
+                                    <select name="" id="${j}">
                                         <option value="" selected="">请选择</option>
                                         `+texts+`
                                    </select>
                                  </div>`;
-                    attrs += attr;
-                }
-                //商品描述
-                let describes = '';
-                let commodity_describe = data[i].commodity_describe.split(",");
-                for (let j = 0; j < commodity_describe.length; j++) {
-                    let describe = `<p>${commodity_describe[j]}</p>`;
-                    describes += describe;
-                }
-                let commodity =
-                    `
+                        attrs += attr;
+                    }
+                    //商品描述
+                    let describes = '';
+                    let commodity_describe = data[i].commodity_describe.split(",");
+                    for (let j = 0; j < commodity_describe.length; j++) {
+                        let describe = `<p>${commodity_describe[j]}</p>`;
+                        describes += describe;
+                    }
+                    let commodity =
+                        `
                     <div class="commodity">
                     <div class="business-name">
                         <input type="checkbox" class="checkbox">
@@ -91,7 +98,7 @@ layui.use(['layer',"jquery","element","carousel"], function() {
                             <div class="commodity-amount">
                                 <div class="amount-box">
                                     <div class="subtraction arithmetic hand-shape">-</div>
-                                    <input type="text" class="amount" value="1">
+                                    <input type="text" class="amount" value="1" readonly="readonly">
                                     <div class="addition arithmetic hand-shape">+</div>
                                 </div>
                             </div>
@@ -101,7 +108,7 @@ layui.use(['layer',"jquery","element","carousel"], function() {
                             `+describes+`
                         </div>
                         <div class="operation">
-                            <p class="selection-text">加入购物车</p>
+                            <p class="selection-text add-to-cart">加入购物车</p>
                             <p class="selection-text">立即购买</p>
                             <p class="selection-text">收藏宝贝</p>
                             <p class="selection-text">举报</p>
@@ -109,9 +116,10 @@ layui.use(['layer',"jquery","element","carousel"], function() {
                     </div>
                 </div>
                     `;
-                commodityList += commodity;
+                    commodityList += commodity;
+                }
+                $(".commodity-list").html(commodityList);
             }
-            $(".commodity-list").html(commodityList);
 
             for (let i = 0; i < data.length; i++) {
                 //监听数量
@@ -205,15 +213,22 @@ layui.use(['layer',"jquery","element","carousel"], function() {
 
             }
 
+            //加入购物车
+            $(".add-to-cart").on("click",function () {
+                //获取属性
+                let first = $(".commodity-attribute span:eq(0)").text()+""+$("#0").val();
+                let second = $(".commodity-attribute span:eq(1)").text()+""+$("#1").val();
+                if ($("#0").val() == "" || $("#0").val() == null) {
+                    layer.msg("请选择第一商品属性")
+                } else if ($("#1").val() == "" || $("#0").val() == null) {
+                    layer.msg("请选择第二商品属性")
+                }
+
+            })
         },
         error:function () {
 
         }
-    })
-
-    //加入购物车
-    $(".operation .selection-text").on("click",function () {
-        alert(1)
     })
 
     //商品浏览
@@ -221,4 +236,7 @@ layui.use(['layer',"jquery","element","carousel"], function() {
         $(".iframe-middle",window.parent.document).attr("src","/ebuy/commodity");
         sessionStorage.setItem("keyword",$(".search-box-input").val());
     })
+
+    //保留搜索框的内容
+    $(".search-box-input").val(sessionStorage.getItem("keyword"));
 })

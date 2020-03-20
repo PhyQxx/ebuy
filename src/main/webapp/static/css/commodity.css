@@ -1,5 +1,5 @@
 p,span{
-    text-decoration: none;
+    user-select: none;
 }
 .middle .box{
     height: fit-content;
@@ -77,6 +77,9 @@ p,span{
     padding: 1em;
     font-weight: bold;
 }
+.commodity-price p{
+    font-weight: normal;
+}
 .commodity-price span:nth-child(3){
     font-weight: normal;
 
@@ -85,6 +88,7 @@ p,span{
     text-align: center;
     padding:1em;
 }
+
 .commodity-amount .amount-box{
     width: 5rem;
     display: flex;

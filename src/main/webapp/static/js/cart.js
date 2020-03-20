@@ -8,17 +8,26 @@ $.ajax({
         userId:userId,
     },
     success:function (data) {
+        if (data.length == 0) {
+            let no = `
+                <div class="no">
+                    <img src="../../static/img/noLogo.png"/>
+                    <p>没有符合条件的宝贝，请尝试其他搜索条件。</p>
+                </div>`;
+            $(".cart-info").html(no);
+        } else {
         console.log(data);
         let cartInfo = "";
         for (let i = 0; i < data.length; i++) {
-            let attribute = data[i].commodity_attribute;
-            let attributes = attribute.split(",");
-            let attributesInfo = "";
-            for (let j = 0; j < attributes.length; j++) {
-                let one = `<p>${attributes[j]}</p>`;
-                attributesInfo += one;
-            }
-            let oneInfo = `
+
+                let attribute = data[i].commodity_attribute;
+                let attributes = attribute.split(",");
+                let attributesInfo = "";
+                for (let j = 0; j < attributes.length; j++) {
+                    let one = `<p>${attributes[j]}</p>`;
+                    attributesInfo += one;
+                }
+                let oneInfo = `
                  <div class="info-one">
                 <div class="business-name">
                     <input type="checkbox" class="checkbox">
@@ -38,8 +47,8 @@ $.ajax({
                     <div class="commodity-attribute frame">
                         <span>修改</span>
                         <i class="layui-icon layui-icon-edit"></i>`
-                +attributesInfo+
-            `
+                    + attributesInfo +
+                    `
                     </div>
                     <div class="commodity-price">
                         ￥${data[i].commodity_price}
@@ -51,7 +60,7 @@ $.ajax({
                             <div class="addition arithmetic hand-shape">+</div>
                         </div>
                     </div>
-                    <div class="commodity-money">￥`+(data[i].commodity_price*data[i].commodity_amount).toFixed(2)+`</div>
+                    <div class="commodity-money">￥` + (data[i].commodity_price * data[i].commodity_amount).toFixed(2) + `</div>
                     <div class="operation">
                         <p class="selection-text">移入收藏夹</p>
                         <p class="selection-text">删除</p>
@@ -60,10 +69,10 @@ $.ajax({
                 </div>
             </div>
                 `;
-            cartInfo += oneInfo;
+                cartInfo += oneInfo;
+            }
+            $(".cart-info").html(cartInfo);
         }
-        $(".cart-info").html(cartInfo);
-
         for (let i = 0; i < data.length; i++) {
             //监听数量
             let $input = $(".amount:eq("+i+")");

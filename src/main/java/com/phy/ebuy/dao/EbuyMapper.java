@@ -43,4 +43,9 @@ public interface EbuyMapper {
      * 获取商品列表
      */
     List<Map<String,Object>> commodityInfo(String keyword);
+
+    /**
+     * 查询各状态订单数量
+     */
+    List<Map<String,Object>> orderNumber(String userId);
 }

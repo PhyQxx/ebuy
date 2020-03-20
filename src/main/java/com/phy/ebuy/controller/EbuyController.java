@@ -183,4 +183,11 @@ public class EbuyController {
         return result;
     }
 
+    //查询各状态订单数量
+    @RequestMapping("/orderNumber")
+    @ResponseBody
+    public List<Map<String,Object>> orderNumber(@RequestParam("userId")String userId) {
+        List<Map<String,Object>> result = ebuyService.orderNumber(userId);
+        return result;
+    }
 }

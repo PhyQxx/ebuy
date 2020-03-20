@@ -15,11 +15,20 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
             orderStatus:"01",
         },
         success:function (data) {
+            if (data.length == 0) {
+                let no = `
+                <div class="no">
+                    <img src="../../static/img/noLogo.png"/>
+                    <p>没有符合条件的宝贝，请尝试其他搜索条件。</p>
+                </div>`;
+                $(".table-body").html(no);
+            } else {
             orderInfo = data;
             let orderTable = "";
             for (let i = 0; i < data.length; i++) {
-                let orderOne = "";
-                //待付款
+
+                    let orderOne = "";
+                    //待付款
                     orderOne = `<div class="oneOrder">
                     <div class="top">
                         <div class="timeAndOrderId">
@@ -61,9 +70,10 @@ layui.use(["layer","jquery","element","carousel","table"], function() {
                         </div>
                     </div>
                 </div>`;
-                orderTable += orderOne;
+                    orderTable += orderOne;
+                }
+                $(".table-body").html(orderTable);
             }
-            $(".table-body").html(orderTable);
         },
         error:function () {
         }

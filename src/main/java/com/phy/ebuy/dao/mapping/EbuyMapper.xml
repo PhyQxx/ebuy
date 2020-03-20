@@ -130,4 +130,9 @@ inner join ebuy_commodity_attribute ca on c.commodity_id = ca.commodity_id
         ORDER BY
         c.commodity_type ,c.commodity_type_details
     </select>
+
+    <!--查询状态订单数量-->
+    <select id="orderNumber" resultType="map" parameterType="string">
+        select order_status,count(*) number from ebuy_order _status where user_id = #{userId} GROUP BY order_status
+    </select>
 </mapper>

@@ -9,5 +9,38 @@ html{
 }
 body{
     width: 100%;
-    height: 100%;
+}
+.content{
+    margin: 0 auto;
+    width: 85%;
+}
+nav{
+    width: 8.5rem;
+    float: left;
+}
+nav ul li{
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+}
+nav ul li:hover{
+    color: #17b5fe;
+}
+.select-content{
+    width: 52.4rem;
+    height: 42rem;
+    float: left;
+    margin: 0 2rem;
+    border: 2px solid rgb(196,213,224);
+    padding: 2rem 3rem;
+}
+.security-settig{
+
+}
+.personal-data{
+    display: none;
+}
+.receiving-address{
+    display: none;
 }
