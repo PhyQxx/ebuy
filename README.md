@@ -1,4 +1,4 @@
-![image](https://github.com/PhyQxx/ebuy/assets/43107458/19b09e49-4030-422d-9235-4f1b49cd11be)<p align=center>
+<p align=center>
    EBuy 是一个的网上商城项目
 </p>
 
