@@ -1,5 +1,5 @@
 <p align=center>
-   EBuy 是一个的网上商城项目
+   EBuy 是一个网上商城项目
 </p>
 
 ## 项目选型
